@@ -4,14 +4,27 @@
 /node_modules
 /bower_components
 
+# build
+build/
+tmp
+
 # IDEs and editors
 /.idea
 .project
 .classpath
 *.launch
 .settings/
+.swp
+**.sw*
+*.swo
+*.swp
 
 
 #System Files
 .DS_Store
 Thumbs.db
+
+# sensitive data
+.env*
+!.env.dev
+!.env.sample

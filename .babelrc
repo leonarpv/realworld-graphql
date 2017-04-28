@@ -1,0 +1,15 @@
+{
+  "passPerPreset": true,
+  "presets": [
+    "es2015",
+    "es2016",
+    "stage-2"
+  ],
+  "plugins": [
+    "babel-plugin-inline-import",
+    ["babel-plugin-transform-async-to-generator", {
+      "module": "bluebird",
+      "method": "coroutine"
+    }]
+  ]
+}

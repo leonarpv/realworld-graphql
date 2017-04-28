@@ -1,0 +1,163 @@
+### Articles
+type Article {
+  author: Profile!
+  body: String!
+  comments(first: Int, after: String): CommentsConnection
+  createdAt: String!
+  description: String!
+  favorited: Boolean!
+  favoritesCount: Int!
+  slug: String!
+  tags: [String],
+  title: String!
+  updatedAt: String!
+}
+
+type ArticleEdge {
+  cursor: String!
+  node: Article
+}
+
+type ArticlesConnection {
+  count: Int!
+  edges: [ArticleEdge]
+  pageInfo: PageInfo!
+}
+
+### Comments
+type Comment {
+  author: Profile!
+  article: Article!
+  body: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type CommentEdge {
+  cursor: String!
+  node: Comment
+}
+
+type CommentsConnection {
+  count: Int!
+  edges: [CommentEdge]
+  pageInfo: PageInfo!
+}
+
+type DeletionStatus {
+  success: Boolean!
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+### Profile
+type Profile {
+  username: String!
+  bio: String
+  following: Boolean!
+  image: String
+  articles(first: Int, after: String): ArticlesConnection
+  comments(first: Int, after: String): CommentsConnection
+  favorites(first: Int, after: String): ArticlesConnection
+  feed(first: Int, after: String): ArticlesConnection
+}
+
+### User
+type User {
+  email: String!
+  profile: Profile!
+  token: String!
+  username: String!
+}
+
+## Mutations
+
+# Input types.
+input UpdateArticleInput {
+  body: String
+  description: String
+  title: String
+}
+
+input CreateArticleInput {
+  body: String!
+  description: String!
+  tags: [String]
+  title: String!
+}
+
+type ArticlePayload {
+  article: Article
+}
+
+type CommentPayload {
+  comment: Comment
+}
+
+input CreateUserInput {
+  email: String!
+  username: String!
+  password: String!
+}
+
+input UpdateUserInput {
+  email: String
+  username: String
+  password: String
+  image: String
+  bio: String
+}
+
+type UserPayload {
+  user: User
+}
+
+type ProfilePayload {
+  profile: Profile
+}
+
+# Build the schema.
+type Query {
+  article(slug: String!): Article
+  articles(
+    first: Int,
+    after: String,
+    authoredBy: String
+    favoritedBy: String
+    withTag: String
+  ): ArticlesConnection
+  me: User
+  feed(first: Int, after: String): ArticlesConnection
+  profile(username: String!): ProfilePayload
+  tags: [String]
+}
+
+type Mutation {
+  ### User & Profile
+  createUser(input: CreateUserInput): UserPayload
+  login(password: String!, email: String!): UserPayload
+  updateUser(changes: UpdateUserInput!): UserPayload
+  followUser(username: String!): ProfilePayload
+  unfollowUser(username: String!): ProfilePayload
+
+  ### Article
+  createArticle(input: CreateArticleInput!): ArticlePayload
+  updateArticle(changes: UpdateArticleInput!): ArticlePayload
+  favoriteArticle(slug: String!): ArticlePayload
+  deleteArticle(slug: String!): ArticlePayload
+
+  ### Comment
+  addComment(slug: String!, body: String!): CommentPayload
+  deleteComment(id: ID!): CommentPayload
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
