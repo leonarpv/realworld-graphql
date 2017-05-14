@@ -50,3 +50,5 @@ $ yarn run build && yarn run start
 * `src/resource/resolver.js` - This file must load and merge all the resolver files under the resource folder.
 * `src/resource/users` - This file contains the `user` resource and have 2 files inside `controller.js` that have an abstraction of the user CRUD and `resolver.js`. 
 
+# Docs
+You can easily checkout the queries for the project using [GrahQL IDE](https://github.com/redound/graphql-ide), that's support import and export your saved queries. All queries supported are stored in a JSON exported file in the directory `docs`
