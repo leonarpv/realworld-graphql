@@ -1,15 +1,19 @@
-class ProfileController {
+import Controller from '../../core/base-controller';
+
+class ProfileController extends Controller {
   constructor(context) {
-    this.request = context.request;
-    this.API = new context.Api({
+    super(context);
+
+    this.resource = 'profile';
+
+    this._setupAPI({
       endpoint: 'profiles/{username}',
       replaces: [{ key: 'username', value: 'username '}]
     });
-    this.authToken = context.request.auth.token;
   }
 
   get(username) {
-    return this.API.get(username, { token: this.authToken, replaces: username });
+    return super.get(null, { replaces: username });
   }
 
   follow(username) {

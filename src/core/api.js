@@ -17,12 +17,17 @@ class Api {
   _handleResponseError(err) {
     const error = new Error();
 
-    error.message = err.error.errors;
+    console.error('ERROR', err);
+    error.message = err.error ? err.error.errors : err.message;
     error.isGraphQLError = true;
     error.statusCode = err.statusCode;
 
     if (404 === err.statusCode) {
       error.message = `${err.error.status} - ${err.error.error}`;
+    }
+
+    if (401 === err.statusCode) {
+      error.message = `${err.statusCode} - You must be authenticated OR Your credentials are invalid`;
     }
 
     throw error;
@@ -35,10 +40,12 @@ class Api {
 
       reqOptions = Object.assign(this.defaultOptions, reqOptions, { uri, headers });
 
+      console.log('ReqOptions', reqOptions);
+
       const response = await request(reqOptions);
 
       return response;
-    } catch (err ) {
+    } catch (err) {
       if (err instanceof Errors.StatusCodeError) {
         return this._handleResponseError(err);
       }

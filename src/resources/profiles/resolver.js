@@ -8,6 +8,17 @@ const resolver = {
       return profileController.get(query);
     }
   },
+
+  User: {
+    async profile(root, _query, context) {
+      const profileController = new ProfileController(context);
+
+      const result = await profileController.get({ username: root.username });
+
+      return result.profile;
+    }
+  },
+
   Mutation: {
     followUser(root, args, context ) {
       const profileController = new ProfileController(context);

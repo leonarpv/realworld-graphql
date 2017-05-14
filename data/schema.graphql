@@ -8,7 +8,7 @@ type Article {
   favorited: Boolean!
   favoritesCount: Int!
   slug: String!
-  tags: [String],
+  tagList: [String],
   title: String!
   updatedAt: String!
 }
@@ -87,7 +87,7 @@ input UpdateArticleInput {
 input CreateArticleInput {
   body: String!
   description: String!
-  tags: [String]
+  tagList: [String]
   title: String!
 }
 
@@ -147,9 +147,9 @@ type Mutation {
 
   ### Article
   createArticle(input: CreateArticleInput!): ArticlePayload
-  updateArticle(changes: UpdateArticleInput!): ArticlePayload
+  updateArticle(slug: String!, changes: UpdateArticleInput!): ArticlePayload
   favoriteArticle(slug: String!): ArticlePayload
-  deleteArticle(slug: String!): ArticlePayload
+  deleteArticle(slug: String!): DeletionStatus
 
   ### Comment
   addComment(slug: String!, body: String!): CommentPayload

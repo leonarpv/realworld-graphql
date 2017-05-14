@@ -1,24 +1,19 @@
-class UserController {
-  constructor(context) {
-    this.request = context.request;
-    this.API = new context.Api({ endpoint: 'user'});
-    this.authToken = context.request.auth.token;
-  }
+import Controller from '../../core/base-controller';
 
-  get() {
-    return this.API.get(null, { token: this.authToken });
+class UserController extends Controller {
+  constructor(context) {
+    super(context);
+
+    this.resource = 'user';
+    this._setupAPI({ endpoint: 'user'});
   }
 
   login(user) {
-    return this.API.create({ user }, { endpoint: 'users/login' });
+    return this.API.create(user, { endpoint: 'users/login' });
   }
 
   create(user) {
-    return this.API.create({ user }, { endpoint: 'users' });
-  }
-
-  update(user) {
-    return this.API.update({ user }, { token: this.authToken });
+    return this.API.create(user, { endpoint: 'users' });
   }
 }
 
