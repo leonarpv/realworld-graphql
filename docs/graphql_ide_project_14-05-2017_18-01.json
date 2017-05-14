@@ -1,0 +1,227 @@
+{
+    "app": {
+        "version": "1.0"
+    },
+    "dataStore": {
+        "projectsById": {
+            "87ace90d-d018-4d60-a4f2-bdd010006ec5": {
+                "id": "87ace90d-d018-4d60-a4f2-bdd010006ec5",
+                "title": "RealWorld",
+                "description": "GraphQL codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.",
+                "activeEnvironmentId": "eb11fa70-1250-403f-834e-389842de7b92",
+                "environmentIds": [
+                    "eb11fa70-1250-403f-834e-389842de7b92"
+                ],
+                "collectionQueryIds": [
+                    "13b35406-9c26-45a4-b7dd-7cd1b21ebf17",
+                    "ca077471-b1d2-4f77-bec9-c6ef83eb99b3",
+                    "5f306a91-54ea-4999-a56e-8ddf678c70c4",
+                    "45516f1e-8c5b-4eb7-8263-4d62ba045368",
+                    "aca664a4-c260-4fa5-a815-789c1fdfa1ef",
+                    "d91e3bae-a717-4eff-bd5a-55c5bd8aa4b0",
+                    "e60d6f40-f561-46ef-a67c-eff5aaf75779",
+                    "3e6b8dcd-3d6a-4ab9-a403-55c565d80017",
+                    "0472e9ef-7c18-4aa6-afa3-b5c7a452f6ac",
+                    "b5458ad2-91be-4e64-90df-0b1b766b3e3f",
+                    "b3bbffb2-d754-431c-89c0-71307eb8073b",
+                    "00420c44-efe3-4c8a-bd73-671df5b7fd25",
+                    "fb13aa61-5b57-4048-b3da-9231630674bd"
+                ],
+                "headers": {}
+            }
+        },
+        "projects": [
+            "87ace90d-d018-4d60-a4f2-bdd010006ec5"
+        ],
+        "environmentsById": {
+            "eb11fa70-1250-403f-834e-389842de7b92": {
+                "id": "eb11fa70-1250-403f-834e-389842de7b92",
+                "title": "Local - No Auth",
+                "url": "http://localhost:3000/graphql",
+                "queryMethod": "POST",
+                "variables": {}
+            }
+        },
+        "environments": [
+            "eb11fa70-1250-403f-834e-389842de7b92"
+        ],
+        "queriesById": {
+            "d91e3bae-a717-4eff-bd5a-55c5bd8aa4b0": {
+                "operationType": "mutation",
+                "headers": {
+                    "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTY2OCwidXNlcm5hbWUiOiJ0aGViZXIxMiIsImV4cCI6MTQ5OTgxNjY0N30.65aNW6Kdn16oFAFzBj4uJBHaSbXkMwAW44VMbqa5qY8"
+                },
+                "query": "mutation unfollowUser($username: String!) {\n  unfollowUser(username: $username) {\n    profile {\n      username\n      bio\n      following\n      image\n    }\n  }\n}",
+                "updatedAt": "2017-05-12T23:47:03.092Z",
+                "operationName": "unfollowUser",
+                "variables": "{\n  \"username\": \"theber15\"\n}",
+                "type": "COLLECTION",
+                "id": "d91e3bae-a717-4eff-bd5a-55c5bd8aa4b0",
+                "createdAt": "2017-05-12T23:47:03.092Z"
+            },
+            "b3bbffb2-d754-431c-89c0-71307eb8073b": {
+                "operationType": "mutation",
+                "headers": {
+                    "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTY2OCwidXNlcm5hbWUiOiJ0aGViZXIxMiIsImV4cCI6MTQ5OTgxNjY0N30.65aNW6Kdn16oFAFzBj4uJBHaSbXkMwAW44VMbqa5qY8"
+                },
+                "query": "mutation createArticle($input: CreateArticleInput!) {\n  createArticle(input: $input) {\n    article {\n      title\n      body\n      description\n      slug\n      tagList\n    }\n  }\n}",
+                "updatedAt": "2017-05-14T20:32:26.776Z",
+                "operationName": "createArticle",
+                "variables": "{\n  \"input\": {\n    \"body\": \"LOL WTF BBQ!\",\n    \"title\": \"EU SOU 1337\",\n    \"tagList\": [\"caue\", \"desce\"],\n    \"description\": \"DESCE A LETRA\"\n  }\n}",
+                "type": "COLLECTION",
+                "id": "b3bbffb2-d754-431c-89c0-71307eb8073b",
+                "createdAt": "2017-05-14T20:32:26.777Z"
+            },
+            "45516f1e-8c5b-4eb7-8263-4d62ba045368": {
+                "operationType": "query",
+                "headers": {},
+                "query": "query getProfile($username: String!) {\n  profile(username: $username) {\n    profile {\n      username\n      bio\n      image\n    }\n  }\n}",
+                "updatedAt": "2017-05-10T17:23:17.081Z",
+                "operationName": "getProfile",
+                "variables": "{\n  \"username\":\"theber15\"\n}",
+                "type": "COLLECTION",
+                "id": "45516f1e-8c5b-4eb7-8263-4d62ba045368",
+                "createdAt": "2017-05-10T17:23:17.082Z"
+            },
+            "3e6b8dcd-3d6a-4ab9-a403-55c565d80017": {
+                "operationType": "query",
+                "headers": {
+                    "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTY2OCwidXNlcm5hbWUiOiJ0aGViZXIxMiIsImV4cCI6MTQ5OTgxNjY0N30.65aNW6Kdn16oFAFzBj4uJBHaSbXkMwAW44VMbqa5qY8"
+                },
+                "query": "query listArticles(\n  $first: Int, \n  $after: String,\n  $authoredBy: String,\n\t$favoritedBy: String,\n\t$withTag: String\n) {\n    articles(\n      first: $first,\n      after: $after,\n      authoredBy: $authoredBy,\n      favoritedBy: $favoritedBy,\n      withTag: $withTag\n    ) {\n    count\n    edges {\n      cursor\n      node {\n        title\n        body\n        createdAt\n        description\n        favorited\n        favoritesCount\n        slug\n        tagList\n        author {\n          username\n          bio\n          following\n          image\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      hasPreviousPage\n      startCursor\n      endCursor\n    }\n\t\t    \n  }\n}",
+                "updatedAt": "2017-05-13T01:26:03.815Z",
+                "operationName": "listArticles",
+                "variables": "{\n  \"first\": 30,\n  \"authoredBy\": \"theber12\"\n}",
+                "type": "COLLECTION",
+                "id": "3e6b8dcd-3d6a-4ab9-a403-55c565d80017",
+                "createdAt": "2017-05-13T01:26:03.816Z"
+            },
+            "e60d6f40-f561-46ef-a67c-eff5aaf75779": {
+                "operationType": "query",
+                "headers": {
+                    "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTY2OCwidXNlcm5hbWUiOiJ0aGViZXIxMiIsImV4cCI6MTQ5OTgxNjY0N30.65aNW6Kdn16oFAFzBj4uJBHaSbXkMwAW44VMbqa5qY8"
+                },
+                "query": "query getProfileWithToken($username: String!) {\n  profile(username: $username) {\n    profile {\n      username\n      bio\n      image\n      following\n    }\n  }\n}",
+                "updatedAt": "2017-05-12T23:47:30.140Z",
+                "operationName": "getProfileWithToken",
+                "variables": "{\n  \"username\":\"theber15\"\n}",
+                "type": "COLLECTION",
+                "id": "e60d6f40-f561-46ef-a67c-eff5aaf75779",
+                "createdAt": "2017-05-12T23:47:30.140Z"
+            },
+            "13b35406-9c26-45a4-b7dd-7cd1b21ebf17": {
+                "operationType": "mutation",
+                "headers": {},
+                "query": "mutation createUser($input: CreateUserInput!) {\n  createUser(input: $input) {\n    user {\n      email\n      token\n      username\n      profile {\n        username\n        bio\n        following\n        image\n      }\n    }\n  }\n}",
+                "updatedAt": "2017-05-10T17:09:26.141Z",
+                "operationName": "createUser",
+                "variables": "{\n  \"input\": {\n    \"email\": \"marcos+5@thedon.com.br\",\n    \"username\":\"theber15\",\n    \"password\": \"12345678\"\n  }\n}",
+                "type": "COLLECTION",
+                "id": "13b35406-9c26-45a4-b7dd-7cd1b21ebf17",
+                "createdAt": "2017-05-10T16:12:18.346Z"
+            },
+            "ca077471-b1d2-4f77-bec9-c6ef83eb99b3": {
+                "operationType": "mutation",
+                "headers": {},
+                "query": "mutation login ($email:String!, $password:String!) {\n  login(email: $email, password: $password) {\n    user {\n      email\n      token\n      username\n      profile {\n        username\n        bio\n        following\n        image\n      }\n    }\n  }\n}",
+                "updatedAt": "2017-05-10T16:12:22.004Z",
+                "operationName": "login",
+                "variables": "{\n  \"email\": \"marcos+2@thedon.com.br\",\n  \"password\": \"12345678\"\n}",
+                "type": "COLLECTION",
+                "id": "ca077471-b1d2-4f77-bec9-c6ef83eb99b3",
+                "createdAt": "2017-05-10T16:12:22.004Z"
+            },
+            "fb13aa61-5b57-4048-b3da-9231630674bd": {
+                "operationType": "mutation",
+                "headers": {
+                    "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTY2OCwidXNlcm5hbWUiOiJ0aGViZXIxMiIsImV4cCI6MTQ5OTgxNjY0N30.65aNW6Kdn16oFAFzBj4uJBHaSbXkMwAW44VMbqa5qY8"
+                },
+                "query": "mutation deleteArticle($slug: String!) {\n  deleteArticle(slug: $slug) {\n    success\n  }\n}",
+                "updatedAt": "2017-05-14T20:56:58.149Z",
+                "operationName": "deleteArticle",
+                "variables": "{\n  \"slug\": \"eu-sou-1337-5pzrhj\"\n}",
+                "type": "COLLECTION",
+                "id": "fb13aa61-5b57-4048-b3da-9231630674bd",
+                "createdAt": "2017-05-14T20:56:58.149Z"
+            },
+            "00420c44-efe3-4c8a-bd73-671df5b7fd25": {
+                "operationType": "mutation",
+                "headers": {
+                    "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTY2OCwidXNlcm5hbWUiOiJ0aGViZXIxMiIsImV4cCI6MTQ5OTgxNjY0N30.65aNW6Kdn16oFAFzBj4uJBHaSbXkMwAW44VMbqa5qY8"
+                },
+                "query": "mutation updateArticle($slug: String!, $changes: UpdateArticleInput!) {\n  updateArticle(slug: $slug, changes: $changes) {\n    article {\n      title\n      body\n      description\n      slug\n      tagList\n    }\n  }\n}",
+                "updatedAt": "2017-05-14T20:40:42.679Z",
+                "operationName": "updateArticle",
+                "variables": "{\n  \"slug\": \"eu-sou-1337-ag1thi\",\n  \"changes\": {\n    \"body\": \"LOL WTF!\",\n    \"title\": \"EU SOU 1337\",\n    \"description\": \"DESCE A LETRA\"\n  }\n}",
+                "type": "COLLECTION",
+                "id": "00420c44-efe3-4c8a-bd73-671df5b7fd25",
+                "createdAt": "2017-05-14T20:40:42.679Z"
+            },
+            "0472e9ef-7c18-4aa6-afa3-b5c7a452f6ac": {
+                "operationType": "query",
+                "headers": {},
+                "query": "query getArticle($slug: String!) {\n    article(slug: $slug) {\n      title\n      body\n      createdAt\n      description\n      favorited\n      favoritesCount\n      slug\n      tags    \n  }\n}",
+                "updatedAt": "2017-05-13T01:36:57.269Z",
+                "operationName": "getArticle",
+                "variables": "{\n  \"slug\": \"hello-vikuu9\"\n}",
+                "type": "COLLECTION",
+                "id": "0472e9ef-7c18-4aa6-afa3-b5c7a452f6ac",
+                "createdAt": "2017-05-13T01:36:57.269Z"
+            },
+            "b5458ad2-91be-4e64-90df-0b1b766b3e3f": {
+                "operationType": "query",
+                "headers": {
+                    "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTY2OCwidXNlcm5hbWUiOiJ0aGViZXIxMiIsImV4cCI6MTQ5OTgxNjY0N30.65aNW6Kdn16oFAFzBj4uJBHaSbXkMwAW44VMbqa5qY8"
+                },
+                "query": "query articlesFeed(\n  $first: Int, \n  $after: String\n) {\n    feed(\n      first: $first,\n      after: $after\n    ) {\n    count\n    edges {\n      cursor\n      node {\n        title\n        body\n        createdAt\n        description\n        favorited\n        favoritesCount\n        slug\n        tagList\n      }\n    }\n    pageInfo {\n      hasNextPage\n      hasPreviousPage\n      startCursor\n      endCursor\n    }\n\t\t    \n  }\n}",
+                "updatedAt": "2017-05-14T03:52:10.165Z",
+                "operationName": "articlesFeed",
+                "variables": null,
+                "type": "COLLECTION",
+                "id": "b5458ad2-91be-4e64-90df-0b1b766b3e3f",
+                "createdAt": "2017-05-14T03:52:10.165Z"
+            },
+            "5f306a91-54ea-4999-a56e-8ddf678c70c4": {
+                "operationType": "mutation",
+                "headers": {
+                    "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTY3NCwidXNlcm5hbWUiOiJ0aGViZXIxNSIsImV4cCI6MTQ5OTYyMDA0MX0.dWkHVnAX_ZbTPdnD6xbZcuYO1IEXoQPQEjiAgytMtnU"
+                },
+                "query": "mutation updateUser($changes: UpdateUserInput!) {\n  updateUser(changes: $changes) {\n    user {\n      email\n      username\n      profile {\n        bio\n      }\n    }\n  }\n}",
+                "updatedAt": "2017-05-10T17:13:44.427Z",
+                "operationName": "updateUser",
+                "variables": "{\n  \"changes\": {\n    \"bio\": \"Hello, can you hear me?\"\n  }\n}",
+                "type": "COLLECTION",
+                "id": "5f306a91-54ea-4999-a56e-8ddf678c70c4",
+                "createdAt": "2017-05-10T17:13:44.429Z"
+            },
+            "aca664a4-c260-4fa5-a815-789c1fdfa1ef": {
+                "operationType": "mutation",
+                "headers": {
+                    "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTY2OCwidXNlcm5hbWUiOiJ0aGViZXIxMiIsImV4cCI6MTQ5OTgxNjY0N30.65aNW6Kdn16oFAFzBj4uJBHaSbXkMwAW44VMbqa5qY8"
+                },
+                "query": "mutation followUser($username: String!) {\n  followUser(username: $username) {\n    profile {\n      username\n      bio\n      following\n      image\n    }\n  }\n}",
+                "updatedAt": "2017-05-12T23:44:49.461Z",
+                "operationName": "followUser",
+                "variables": "{\n  \"username\": \"thebergamo+3\"\n}",
+                "type": "COLLECTION",
+                "id": "aca664a4-c260-4fa5-a815-789c1fdfa1ef",
+                "createdAt": "2017-05-12T23:44:49.461Z"
+            }
+        },
+        "queries": [
+            "13b35406-9c26-45a4-b7dd-7cd1b21ebf17",
+            "ca077471-b1d2-4f77-bec9-c6ef83eb99b3",
+            "5f306a91-54ea-4999-a56e-8ddf678c70c4",
+            "45516f1e-8c5b-4eb7-8263-4d62ba045368",
+            "aca664a4-c260-4fa5-a815-789c1fdfa1ef",
+            "d91e3bae-a717-4eff-bd5a-55c5bd8aa4b0",
+            "e60d6f40-f561-46ef-a67c-eff5aaf75779",
+            "3e6b8dcd-3d6a-4ab9-a403-55c565d80017",
+            "0472e9ef-7c18-4aa6-afa3-b5c7a452f6ac",
+            "b5458ad2-91be-4e64-90df-0b1b766b3e3f",
+            "b3bbffb2-d754-431c-89c0-71307eb8073b",
+            "00420c44-efe3-4c8a-bd73-671df5b7fd25",
+            "fb13aa61-5b57-4048-b3da-9231630674bd"
+        ]
+    }
+}
