@@ -10,7 +10,7 @@ This codebase was created to demonstrate a fully fledged fullstack application b
 
 We've gone to great lengths to adhere to the **Graphql with Apollo Server** community styleguides & best practices.
 
-For more information on how to this works with other frontends/backends, head over to the [RealWorld](https://github.com/gothinkster/realworld) repo.
+For more information on how this works with other frontends/backends, head over to the [RealWorld](https://github.com/gothinkster/realworld) repo.
 
 ## Note
 This repo is **under development** yet! **Contributors** are very welcomed!
@@ -43,12 +43,12 @@ $ yarn run build && yarn run start
 # Code Overview
 
 ## Application Structure
-* `data/schema.graphql` - Is the file that resolve the Graphql schema.
-* `src/server.js` - Entry point of the application. This file define the Hapi.js server and graphql-server-hapi. 
+* `data/schema.graphql` - Is the file that resolves the Graphql schema.
+* `src/server.js` - Entry point of the application. This file defines the Hapi.js server and graphql-server-hapi. 
 * `src/core` - This folder contains all helper files, like `src/core/config.js` and `src/core/schema.js`.
 * `src/resource` - This folder contains the resources folders. Any resource must auto contain itself.
 * `src/resource/resolver.js` - This file must load and merge all the resolver files under the resource folder.
-* `src/resource/users` - This file contains the `user` resource and have 2 files inside `controller.js` that have an abstraction of the user CRUD and `resolver.js`. 
+* `src/resource/users` - This file contains the `user` resource and has 2 files inside `controller.js` that have an abstraction of the user CRUD and `resolver.js`. 
 
 # Docs
-You can easily checkout the queries for the project using [GrahQL IDE](https://github.com/redound/graphql-ide), that's support import and export your saved queries. All queries supported are stored in a JSON exported file in the directory `docs`
+You can easily checkout the queries for the project using [GraphQL IDE](https://github.com/redound/graphql-ide), which support import and export your saved queries. All queries supported are stored in a JSON exported file in the directory `docs`.
