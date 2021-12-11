@@ -11,15 +11,15 @@ services:
       - ./src:/app/api-graphql/src
     ports:
       - "3000:3000"
-    command: yarn dev 
 
   realworld-graphql:
     extends: common-app
 
   realworld-graphql-prod:
     extends: common-app
+    environment:
+      - NODE_ENV=production
     build:
       context: ./
       dockerfile: Dockerfile.production
-    command: yarn start
 
