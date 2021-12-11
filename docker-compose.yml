@@ -11,6 +11,7 @@ services:
       - ./src:/app/api-graphql/src
     ports:
       - "3000:3000"
+    command: yarn dev 
 
   realworld-graphql:
     extends: common-app
