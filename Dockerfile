@@ -4,6 +4,7 @@ RUN apk add -U --no-cache \
       bash \
       git \
       curl
+RUN mkdir -p /app/api-graphql
 
 WORKDIR /app/api-graphql
 
