@@ -4,13 +4,11 @@ services:
   # App
   common-app:
     build: ./
-    command: yarn dev
     #env_file: .env.dev
     environment:
       - NODE_ENV=development
     volumes:
-      - ./:/app/api-graphql
-
+      - ./src:/app/api-graphql/src
     ports:
       - "3000:3000"
 
@@ -19,8 +17,9 @@ services:
 
   realworld-graphql-prod:
     extends: common-app
+    environment:
+      - NODE_ENV=production
     build:
       context: ./
       dockerfile: Dockerfile.production
-    command: yarn start
 

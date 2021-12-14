@@ -19,7 +19,7 @@ This repo is **under development** yet! **Contributors** are very welcomed!
 # Getting started
 
 ```bash
-$ git clone git@github.com:thebergamo/realworld-graphql.git
+$ git clone https://github.com/thebergamo/realworld-graphql.git
 
 $ cd realworld-graphql
 
